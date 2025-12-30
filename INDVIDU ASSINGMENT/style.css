@@ -1,0 +1,827 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --primary-blue: #3498db;    
+    --dark-blue: #2c3e50;      
+    --pale-blue: #e6f2ff;      
+    --white: #ffffff;           
+    --text-dark: #2c3e50;       
+    --light-blue-gradient: #6dd5ed; 
+}
+
+body {
+    background-color: var(--pale-blue); /* Pale background */
+    color: var(--text-dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+
+
+
+/* Loading Page Background */
+#loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #f0f8ff; /* soft pale blue/azure */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    animation: fadeOut 1s ease forwards;
+    animation-delay: 2.5s; /* duration before fade out */
+}
+
+.star span {
+    font-size: 50px;
+    margin: 0 5px;
+    display: inline-block;
+    color: var(--primary-blue); /* Heart color */
+    animation: heartBounce 0.8s infinite alternate;
+}
+.star span:nth-child(2) { animation-delay: 0.2s; }
+.star span:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes heartBounce {
+    0% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-20px) scale(1.3); }
+    100% { transform: translateY(0) scale(1); }
+}
+
+/* Loading text */
+#loading p {
+    margin-top: 20px;
+    font-size: 18px;
+    color: var(--primary-blue);
+    font-family: "Poppins", sans-serif;
+}
+
+/* Fade out animation */
+@keyframes fadeOut {
+    to { opacity: 0; visibility: hidden; }
+}
+
+.page-nav {
+    position: fixed;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    padding: 0 20px;
+    pointer-events: none;
+}
+
+
+
+/* Music Box (Soft blue background) */
+.music-box {
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #e6f2ff; /* Very light blue */
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(52, 152, 219, 0.3); /* Blue shadow */
+    text-align: center;
+}
+
+.music-box h2 {
+    font-family: "Poppins", sans-serif;
+    color: var(--dark-blue); /* Dark blue header */
+    margin-bottom: 15px;
+}
+
+
+/* Navigation */
+nav {
+    background-color: var(--dark-blue); /* Darker blue navigation bar */
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--white);
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 30px;
+}
+
+.nav-links a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--primary-blue); /* Primary blue on hover */
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-blue); /* Primary blue underline */
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+/* Mobile Menu Button */
+.mobile-menu-btn {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.mobile-menu-btn span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--white);
+    margin: 3px 0;
+    transition: 0.3s;
+    border-radius: 2px;
+}
+
+/* Mobile menu animation */
+.mobile-menu-btn.active span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.mobile-menu-btn.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-btn.active span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* Page Header */
+.page-header {
+    padding: 150px 0 80px;
+    text-align: center;
+    background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue)); /* Blue Gradient */
+    color: var(--white);
+    margin-top: 70px;
+}
+
+.page-header h1 {
+    font-size: 48px;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.page-header p {
+    font-size: 20px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Hero Section - Centered */
+.hero {
+    padding: 150px 0 100px;
+    text-align: center;
+    background: linear-gradient(135deg, var(--light-blue-gradient), var(--primary-blue)); /* Light/Medium Blue Gradient */
+    color: var(--white);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0px;
+}
+
+/* Center alignment for hero section */
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Center the profile image */
+.profile-img {
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--white);
+    margin: 0 auto 30px auto;
+    display: block;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Center all text in hero section */
+.hero h1,
+.hero p,
+.hero-description {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Center the buttons */
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+
+/* About Page */
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin-bottom: 60px;
+}
+
+.about-img {
+    flex: 1;
+    text-align: center;
+}
+
+.about-img img {
+    width: 650px;
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.about-img img:hover {
+    transform: scale(1.05);
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: var(--dark-blue);
+}
+
+.about-text h3 {
+    font-size: 24px;
+    margin: 30px 0 15px;
+    color: var(--primary-blue); /* Primary blue header */
+}
+
+.about-text p {
+    margin-bottom: 15px;
+}
+
+.about-actions {
+    margin-top: 30px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+
+/* Footer */
+footer {
+    background-color: var(--dark-blue); /* Dark blue footer */
+    color: var(--white);
+    padding: 30px 0;
+    text-align: center;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.social-link {
+    width: 40px;
+    height: 40px;
+    background-color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+    color: var(--primary-blue); /* Primary blue icon color */
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    background-color: var(--primary-blue); /* Primary blue hover background */
+    color: var(--white);
+    transform: translateY(-3px);
+}
+
+/* Animations (No change needed) */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design (No color changes needed) */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--dark-blue); /* Darker blue background */
+        flex-direction: column;
+        padding: 20px;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .mobile-menu-btn {
+        display: flex;
+    }
+
+    .hero h1,
+    .page-header h1 {
+        font-size: 36px;
+    }
+
+    .about-content,
+    .contact-container {
+        flex-direction: column;
+    }
+
+    .hero-buttons,
+    .about-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hobbies-container,
+    .diary-container,
+    .links-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1,
+    .page-header h1 {
+        font-size: 28px;
+    }
+
+    .section-title {
+        font-size: 28px;
+    }
+
+    .hero p,
+    .page-header p {
+        font-size: 18px;
+    }
+
+    .profile-img {
+        width: 150px;
+        height: 150px;
+    }
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial;
+}
+
+.header {
+  text-align: center;
+  padding: 32px;
+}
+ transform: rotateY(180deg);
+}
+/* Slideshow memenuhi lebar skrin */
+.slideshow-container {
+    width: 100%;
+    height: 500px; /* Anda boleh ubah tinggi ini */
+    position: relative;
+    overflow: hidden;
+    background-color: #333; /* Warna backup jika gambar tak keluar */
+}
+
+.mySlides {
+    display: none;
+    height: 100%;
+}
+
+.mySlides img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Penting: Gambar tak akan penyet */
+}
+
+/* Navigasi Kiri & Kanan */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.3s;
+    background-color: rgba(0,0,0,0.3);
+    border-radius: 0 3px 3px 0;
+    text-decoration: none;
+    z-index: 2;
+}
+
+.next { right: 0; border-radius: 3px 0 0 3px; }
+.prev:hover, .next:hover { background-color: rgba(0,0,0,0.8); }
+
+/* Teks di atas gambar */
+.text {
+    color: #ffffff;
+    font-size: 20px;
+    position: absolute;
+    bottom: 60px;
+    width: 100%;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+}
+
+/* Dot/Bulatan */
+.dot-container {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+    z-index: 2;
+}
+
+.dot {
+    cursor: pointer;
+    height: 12px;
+    width: 12px;
+    margin: 0 4px;
+    background-color: rgba(255,255,255,0.5);
+    border-radius: 50%;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.active, .dot:hover { background-color: white; }
+
+/* Animasi Fade */
+.fade {
+    animation: fadeEffect 1s;
+}
+@keyframes fadeEffect {
+    from {opacity: 0.4} to {opacity: 1}
+}
+
+/* Bahagian kandungan di bawah */
+.main-content {
+    padding: 40px;
+    text-align: center;
+}
+
+
+/* Susunan Kad */
+.card-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Bekas Utama Kad */
+.flip-card {
+    background-color: transparent;
+    width: 250px;
+    height: 350px;
+    perspective: 1000px; /* Memberi kesan 3D */
+}
+
+/* Bahagian yang berpusing */
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border-radius: 15px;
+}
+
+/* Pusingkan kad bila hover */
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+/* Tetapan Depan & Belakang */
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Penting untuk Chrome/Safari */
+    backface-visibility: hidden;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+/* Bahagian Depan */
+.flip-card-front {
+    background-color: #ddd;
+    color: black;
+}
+
+.flip-card-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Bahagian Belakang */
+.flip-card-back {
+    background-color: #2980b9;
+    color: white;
+    transform: rotateY(180deg); /* Kedudukan asal adalah terbalik */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.flip-card-back h1 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+/* Pastikan row menggunakan flexbox yang betul */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+  justify-content: center; /* Memastikan kolum duduk di tengah jika skrin besar */
+}
+
+/* Lebar kolum dikekalkan 25% untuk desktop */
+.column {
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 4px;
+}
+
+/* INI BAHAGIAN PENTING: Supaya gambar tersusun rapat dan sekata */
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+  /* Tambahkan 2 baris di bawah ini */
+  height: 250px;    /* Anda boleh ubah ketinggian ini ikut kesesuaian */
+  object-fit: cover; /* Supaya gambar tak penyek walaupun dipaksa tinggi sama */
+  border-radius: 4px; /* Optional: nampak lebih kemas */
+}
+
+/* Responsive - Untuk Tablet */
+@media screen and (max-width: 800px) {
+  .column {
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+/* Responsive - Untuk Telefon */
+@media screen and (max-width: 600px) {
+  .column {
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+
+{
+  box-sizing: border-box;
+}
+
+
+h1 {
+  font-size: 50px;
+  word-break: break-all;
+}
+
+.row {
+  margin: 8px -16px;
+}
+
+/* Add padding BETWEEN each column (if you want) */
+.row,
+.row > .column {
+  padding: 8px;
+}
+
+/* Create four equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 25%;
+}
+
+/* Clear floats after rows */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Content */
+.content {
+  background-color: white;
+  padding: 10px;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 900px) {
+  .column {
+    width: 50%;
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
+
+
+
+.nav-arrow:hover {
+    transform: scale(1.15);
+    filter: drop-shadow(0 6px 12px rgba(255,150,200,0.6));
+}
+
+.video-wrapper {
+    text-align: center;
+    width: 100%;
+	max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.video-wrapper video {
+    display: block;
+    margin: 0 auto;
+    width: 70%; 
+    max-width: 700px;
+    border-radius: 20px;
+}
+
+.video-wrapper h2 {
+    font-family: "Poppins", sans-serif;
+    color: Navy ;
+    margin-bottom: 15px;
+}
+
+div.scroll-container {
+  overflow: auto;
+  white-space: nowrap;
+  padding: 10px;
+}
+
+div.scroll-container img {
+  padding: 10px;
+}
+
+div.gallery {
+  border: 1px solid #ccc;
+}
+
+div.gallery:hover {
+  border: 1px solid #777;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.responsive {
+  padding: 0 6px;
+  float: left;
+  width: 24.99999%;
+}
+
+@media only screen and (max-width: 700px) {
+  .responsive {
+    width: 49.99999%;
+    margin: 6px 0;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .responsive {
+    width: 100%;
+  }
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+.familypic-wrapper {
+  max-width: 1200px;      
+  margin: 20px auto;      
+  padding: 20px;
+  background-color:#2c3e50  ;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}

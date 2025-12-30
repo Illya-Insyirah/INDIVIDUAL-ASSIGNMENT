@@ -1,0 +1,189 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me | Haecyv Space</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div id="sparkles"></div>
+
+    <button id="btnUp" class="arrow-btn">↑</button>
+    <button id="btnDown" class="arrow-btn">↓</button>
+    <script src="arrow.js"></script>
+
+     <div id="loading">
+<div class="star">
+        <span>⭐</span>
+        <span>⭐</span>
+        <span>⭐</span>
+    </div>
+    <p>Loading... 💫</p>
+</div>
+</div>
+
+<!-- Your website content -->
+<div id="pageContent" style="display:none;">
+    <!-- everything inside your website -->
+</div>
+
+<script src="loading.js"></script>
+
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">♡ Haecyv Space</a>
+            <ul class="nav-links">
+                <li><a href ="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="interest.html">Interest</a></li>
+				<li><a href="family.html">Family</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+            </ul>
+            <div class="mobile-menu-btn" id="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>About Me</h1>
+			<p>₊‧.°.⋆✮⋆.°.‧₊</p>
+            <p>Meet the dreamer behind the digital veil</p>
+			<p>₊‧.°.⋆✮⋆.°.‧₊</p>
+        </div>
+    </section>
+
+
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+            <img src="illyaa.jpg" alt="Illya">
+           
+        </div>
+
+        <div class="mySlides fade">
+            <img src="insyirah.jpg" alt="Insyirah">
+            
+        </div>
+
+        <div class="mySlides fade">
+            <img src="illyainsyirah.jpg" alt="Illya & Insyirah">
+            
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
+
+        <div class="dot-container">
+            <span class="dot" onclick="currentSlide(1)"></span> 
+            <span class="dot" onclick="currentSlide(2)"></span> 
+            <span class="dot" onclick="currentSlide(3)"></span> 
+        </div>
+    </div>
+
+    <div class="main-content">
+        <h2>Get to know me</h2>
+		<p>‎* ꒷︶꒦︶ ୨୧ ︶꒦꒷ ୨ɞ꒷︶꒷꒥꒷✦</p>
+        <p>Hi, I’m Illya Insyirah. I was born on 30 August 2005 in Ipoh, Perak, and I’m the youngest in my family.
+           I enjoy simple things like reading books and listening to music, especially during my quiet moments when I just want to unwind. These little habits help me relax and stay grounded.
+           Currently, I’m in my final year studying for a Diploma in Information Technology at UiTM Kedah. This journey has taught me a lot about growth, patience, and discovering what I’m capable of. I’m looking forward to what lies ahead as I step into the next chapter of my life.</p>
+    </div>
+
+    <script src="slideshow.js"></script>
+	
+	
+<!-- Portfolio Gallery Grid -->
+<div class="row">
+  <div class="column">
+    <div class="content">
+      <img src="album.jpg" alt="Album" style="width:100%">
+      <h3>₊˚୨♡୧˚₊ My Album Colllection ₊˚୨♡୧˚₊ </h3>
+      <p>Most people in my life know that I’m into K-pop. It’s been part of my life for quite a while, 
+	  and over time I started collecting K-pop albums just for fun. I enjoy keeping them as memories, 
+	  not just for the music but also for the concepts and designs. Out of all the groups I listen to,
+	  NCT DREAM is my favourite, and I especially love collecting their albums. 
+	  Each album feels special to me and reminds me of different moments, which makes my collection even more meaningful.</p>
+    </div>
+  </div>
+  <div class="column">
+    <div class="content">
+      <img src="book.jpg" alt="Book" style="width:100%">
+      <h3>⋆✮˚. My Book Collection ‎✦.˚◦</h3>
+      <p>Even with a busy schedule, I always try to make time to read books whenever I can. Reading is something I really enjoy, 
+	  especially when I need a break from my daily routine. One of my favourite authors is Tere Liye from Indonesia, and 
+	  I love the way his stories are written with deep emotions and meaningful messages.
+	  I’ve read several of his books, including Hujan and Tentang Kamu, and they are definitely among my favourites.</p>
+    </div>
+  </div>
+  <div class="column">
+    <div class="content">
+      <img src="dream.jpg" alt="NCT" style="width:100%">
+      <h3>‎ ジ⁀➴✩₊ My Favourite Artis  ✮ ⊹⋆⟡</h3>
+      <p>One of my favourite artists is NCT DREAM. I really enjoy their music because it always feels fresh, fun, and full of energy.
+	  Their songs often match my mood and make my day feel a little brighter, especially when I need motivation or comfort.
+	  What I like most about NCT DREAM is how their music grows along with them, and it feels relatable in different stages of my life.
+	 They’re not just an artist I listen to for entertainment, but a group that brings happiness, inspiration, and positive vibes into my everyday life </p>
+    </div>
+  </div>
+<div class="column">
+  <div class="content">
+    <video width="100%" controls>
+      <source src="matahari.mp4" type="video/mp4">
+    </video>
+    <h3>¸♬•*✩ My Favourite Song ¸♬•*✩</h3>
+    <p>Even though I enjoy listening to K-pop, my current favourite song is Matahari by Empty Page, a local band.
+	There’s something special about this song that always hits differently. 
+	The melody feels calm and emotional, while the lyrics are simple yet meaningful. 
+	Whenever I listen to it, it gives me a sense of comfort and makes me slow down and reflect.
+    The video attached here is a personal video that I recorded during their live performance at the RapidKL concert. 
+	Being able to experience the song live and capture that moment myself made it even more special and memorable for me.</p>
+  </div>
+</div>
+
+</div>
+
+    <!-- Music Section -->
+    <div class="music-box">
+    <h2>My Favourite Playlist</h2>
+	<p>‎* ꒷︶꒦︶ ୨୧ ︶꒦꒷ ୨ɞ꒷︶꒷꒥꒷✦</p>
+        <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/5fn96XLKmMsqSf8rYrg3E8?utm_source=generator&theme=0" 
+		width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+		loading="lazy"></iframe>
+    
+</div>
+
+
+
+    </section>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="https://www.tiktok.com/@haecyv?_r=1&_t=ZS-91zxtFq3xJ4" class="social-link"><i class="fab fa-tiktok"></i></a>
+                <a href="https://x.com/haecyv?s=11" class="social-link"><i class="fab fa-x"></i></a>
+                <a href="https://www.instagram.com/illyvzvini?igsh=Z3Z1Z25rczFya2R0&utm_source=qr" class="social-link"><i class="fab fa-instagram"></i></a>
+                <a href="https://youtube.com/@illyainsyirah5128?si=VjhuX7rX6yyRonKq" class="social-link"><i class="fab fa-youtube"></i></a>
+            </div>
+            <p>&copy; 2025 ♡ Haecyv Space. All Rights Reserved.</p>
+			
+			<div class="info-dates">
+        <span><strong>Data Collected:</strong> 2025-11-01</span>
+        <span><strong>Created:</strong> 2025-11-20</span>
+        <span><strong>Last Updated:</strong> <span id="last-modified">Loading...</span></span>
+		
+		<script src="date.js"></script>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
